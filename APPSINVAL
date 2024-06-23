@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>CodePen - A Pen by solon</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -197,15 +187,10 @@
                     ctx.textAlign = 'center';
                     ctx.fillText('CAMINHÃO ROUBADO', canvas.width / 2, 70);
 
-                    // Desenha o texto "REDE COLABORATIVA APOIO: SINVAL VACINA CONTRA ROUBO"
-                    ctx.fillStyle = 'blue';
-                    ctx.font = '20px Arial';
-                    ctx.fillText('REDE COLABORATIVA APOIO: SINVAL VACINA CONTRA ROUBO', canvas.width / 2, 650);
-
                     // Desenha as informações na parte inferior, centralizadas
                     ctx.fillStyle = 'black';
                     ctx.font = '20px Arial';
-                    const infoYStart = 700;
+                    const infoYStart = canvas.height - 300;
                     const lineHeight = 25;
                     const infoX = canvas.width / 2;
 
@@ -213,15 +198,17 @@
                     ctx.fillText(`Modelo: ${modelo}`, infoX, infoYStart + lineHeight);
                     ctx.fillText(`Ano: ${ano}`, infoX, infoYStart + 2 * lineHeight);
                     ctx.fillText(`Cor: ${cor}`, infoX, infoYStart + 3 * lineHeight);
-                    ctx.fillText(`Localização da Ocorrência: ${localizacaoOcorrencia}`, infoX, infoYStart + 4 * lineHeight);
-                    ctx.fillText(`Última Localização: ${ultimaLocalizacao}`, infoX, infoYStart + 5 * lineHeight);
-                    ctx.fillText(`Descrição: ${descricaoOcorrencia}`, infoX, infoYStart + 6 * lineHeight);
+                    ctx.fillText(`Nome: ${nome}`, infoX, infoYStart + 4 * lineHeight);
+                    ctx.fillText(`Empresa: ${empresa}`, infoX, infoYStart + 5 * lineHeight);
+                    ctx.fillText(`Telefone: ${telefone}`, infoX, infoYStart + 6 * lineHeight);
+                    ctx.fillText(`Localização da Ocorrência: ${localizacaoOcorrencia}`, infoX, infoYStart + 7 * lineHeight);
+                    ctx.fillText(`Última Localização: ${ultimaLocalizacao}`, infoX, infoYStart + 8 * lineHeight);
+                    ctx.fillText(`Descrição: ${descricaoOcorrencia}`, infoX, infoYStart + 9 * lineHeight);
 
-                    // Desenha o nome, empresa e telefone com espaçamento
-                    const contactInfoYStart = infoYStart + 8 * lineHeight;
-                    ctx.fillText(`Nome: ${nome}`, infoX, contactInfoYStart);
-                    ctx.fillText(`Empresa: ${empresa}`, infoX, contactInfoYStart + lineHeight);
-                    ctx.fillText(`Telefone: ${telefone}`, infoX, contactInfoYStart + 2 * lineHeight);
+                    // Desenha o texto no canto inferior central
+                    ctx.fillStyle = 'blue';
+                    ctx.font = '15px Arial';
+                    ctx.fillText('REDE COLABORATIVA APOIO: SINVAL VACINA CONTRA ROUBO', infoX, canvas.height - 20);
 
                     // Cria o link para download da imagem
                     const link = document.createElement('a');
@@ -236,9 +223,5 @@
             document.getElementById('alertLinks').classList.remove('hidden');
         }
     </script>
-</body>
-</html>
-<!-- partial -->
-  
 </body>
 </html>
